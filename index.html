@@ -1,1 +1,308 @@
-soon updating privacy policy as game completed , before release
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Az Arrows</title>
+    <style>
+        :root {
+            --primary: #6200EE;
+            --secondary: #03DAC6;
+            --bg: #121212;
+            --text: #E0E0E0;
+            --card-bg: #1E1E1E;
+            --accent: #FF0266;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            height: 100vh;
+        }
+
+        .scene {
+            width: 100vw;
+            height: 100vh;
+            perspective: 2000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book {
+            width: 95vw;
+            height: 90vh;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            transform-origin: left center;
+            backface-visibility: hidden;
+            overflow-y: auto;
+            padding: 40px;
+            box-sizing: border-box;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Torn Paper Effect */
+        .page::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 15px;
+            background: var(--bg);
+            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="black"></path></svg>');
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="black"></path></svg>');
+        }
+
+        .page.flipped { transform: rotateY(-180deg); }
+
+        h1 { color: var(--secondary); font-size: 2rem; margin-bottom: 10px; }
+        h2 { color: var(--primary); margin-top: 40px; border-left: 3px solid var(--accent); padding-left: 15px; }
+        p, li { line-height: 1.8; font-size: 0.95rem; color: #BBB; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 8px; display: flex; align-items: flex-start; }
+        li::before { content: "•"; color: var(--accent); font-weight: bold; width: 20px; flex-shrink: 0; }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 40px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        button:hover:not(:disabled) { background: var(--accent); transform: scale(1.05); }
+        button:disabled { background: #333; opacity: 0.5; }
+
+        .page-indicator {
+            position: fixed;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 800;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="scene">
+    <div class="book" id="book">
+        
+        <!-- SECTION 1: IDENTITY & CORE DATA -->
+        <div class="page" style="z-index: 10;">
+            <h1>Az Arrows</h1>
+            <p><strong>Privacy Policy & Data Transparency</strong></p>
+            <p>Effective as of today, AzMeer ensures that your interaction with Az Arrows is secure and private.</p>
+            
+            <h2>I. Device Identity (Details 1-20)</h2>
+            <ul>
+                <li>1. Unique Android Advertising ID for non-personalized tracking.</li>
+                <li>2. Device Hardware Model (e.g., Pixel 7) for UI optimization.</li>
+                <li>3. Manufacturer details to handle brand-specific haptics.</li>
+                <li>4. Operating System version (API level) for feature compatibility.</li>
+                <li>5. Screen Resolution and Density (DPI) for arrow rendering.</li>
+                <li>6. Preferred System Language for localized puzzle hints.</li>
+                <li>7. Current Time Zone to sync daily reward resets.</li>
+                <li>8. Network Carrier Name for connectivity troubleshooting.</li>
+                <li>9. Battery Level to reduce animation intensity in Power Saving mode.</li>
+                <li>10. System Uptime to verify session integrity.</li>
+                <li>11. App Installation Source (e.g., Google Play Store).</li>
+                <li>12. Internal Build Version of Az Arrows.</li>
+                <li>13. Orientation sensor status for board rotation.</li>
+                <li>14. Touch capability detection (Multi-touch support).</li>
+                <li>15. Disk Space availability for DataStore persistence.</li>
+                <li>16. Memory (RAM) availability for smooth arrow physics.</li>
+                <li>17. Kernel Version for deep-level bug analysis.</li>
+                <li>18. CPU Architecture (arm64/x86) for native library usage.</li>
+                <li>19. Bluetooth status (permission check only, no pairing).</li>
+                <li>20. System Font Scale settings for accessibility.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 2: BILLING & ECONOMY -->
+        <div class="page" style="z-index: 9;">
+            <h2>II. Financial & Transactional (Details 21-40)</h2>
+            <p>Processed securely via Google Play Billing API.</p>
+            <ul>
+                <li>21. Google Play Order ID for every purchase.</li>
+                <li>22. Purchase Token for server-side verification.</li>
+                <li>23. Product SKU: <code>infinite_health</code> status.</li>
+                <li>24. Product SKU: <code>infinite_hints</code> status.</li>
+                <li>25. Product SKU: <code>bundle_20_20</code> status.</li>
+                <li>26. Transaction Timestamp (ISO 8601).</li>
+                <li>27. Localized Currency Code (e.g., USD, EUR).</li>
+                <li>28. Price Point at the time of purchase.</li>
+                <li>29. Acknowledgment State of digital goods.</li>
+                <li>30. Consumption History for hints.</li>
+                <li>31. Subscription renewal dates (if applicable).</li>
+                <li>32. Refund request metadata.</li>
+                <li>33. Payment Method type (handled by Google).</li>
+                <li>34. Billing Country for tax compliance.</li>
+                <li>35. Receipt Signature verification logs.</li>
+                <li>36. Sandbox vs. Production environment flag.</li>
+                <li>37. History of failed transaction codes.</li>
+                <li>38. Entitlement status for "Ad-Free" upgrades.</li>
+                <li>39. Digital signature of the purchase receipt.</li>
+                <li>40. Promotion code usage history.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 3: SENSORS & GAMEPLAY -->
+        <div class="page" style="z-index: 8;">
+            <h2>III. Camera & Sensory Logic (Details 41-60)</h2>
+            <ul>
+                <li>41. Camera Frame Metadata for AR interaction.</li>
+                <li>42. Local Image Processing via CameraX API.</li>
+                <li>43. Zero Cloud Upload: No photos leave your device.</li>
+                <li>44. Camera Permission timestamps.</li>
+                <li>45. Flashlight toggle events for game lighting.</li>
+                <li>46. Lens Focus state to ensure image clarity.</li>
+                <li>47. Haptic Feedback (Vibration) duration and intensity.</li>
+                <li>48. Sound Effect volume preferences.</li>
+                <li>49. Music playback state (On/Off).</li>
+                <li>50. Motion sensor data for arrow tilt effects.</li>
+                <li>51. Current Level reached (1-100).</li>
+                <li>52. Total Arrows released in session.</li>
+                <li>53. Collision counts for difficulty balancing.</li>
+                <li>54. Hint usage frequency per geometric pattern.</li>
+                <li>55. Game Over events and restart triggers.</li>
+                <li>56. Time-to-solve per level.</li>
+                <li>57. UI Heatmap: Most clicked buttons.</li>
+                <li>58. Dynamic Theme selection (Color Seed).</li>
+                <li>59. Navigation Backstack depth tracking.</li>
+                <li>60. Tutorial stage completion status.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 4: ADS & SECURITY -->
+        <div class="page" style="z-index: 7;">
+            <h2>IV. AdMob & Security (Details 61-80)</h2>
+            <ul>
+                <li>61. Ad Impression count for Banner ads.</li>
+                <li>62. Rewarded Video completion status.</li>
+                <li>63. Ad Click events for monetization reporting.</li>
+                <li>64. Ad Unit ID usage (Banner & Rewarded).</li>
+                <li>65. User Consent for Personalized Ads (GDPR/UMP).</li>
+                <li>66. Child-Directed Treatment (TFCD) flags.</li>
+                <li>67. App-Set ID for fraud prevention.</li>
+                <li>68. AES-256 Encryption for local DataStore.</li>
+                <li>69. Room Database integrity checks.</li>
+                <li>70. ProGuard/R8 Code Obfuscation.</li>
+                <li>71. SSL Pinning for internal API calls.</li>
+                <li>72. HTTPS/TLS 1.3 for all external traffic.</li>
+                <li>73. Sandboxed local storage path access.</li>
+                <li>74. Anti-Tamper check for Billing signatures.</li>
+                <li>75. Crashlytics Error logs (Anonymized).</li>
+                <li>76. ANR (App Not Responding) metrics.</li>
+                <li>77. Stack trace metadata for logic errors.</li>
+                <li>78. Device Root status (for integrity API).</li>
+                <li>79. Play Protect validation status.</li>
+                <li>80. Session token expiration (if applicable).</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 5: LEGAL & CONTACT -->
+        <div class="page" style="z-index: 6;">
+            <h2>V. User Rights & Governance (Details 81-100)</h2>
+            <ul>
+                <li>81. Right to Access: Request your local progress data.</li>
+                <li>82. Right to Erasure: Clear all data in App Settings.</li>
+                <li>83. GDPR Compliance for EU residents.</li>
+                <li>84. CCPA/CPRA Compliance for California residents.</li>
+                <li>85. Data Minimization: We collect only what is needed.</li>
+                <li>86. Opt-Out mechanism for non-essential analytics.</li>
+                <li>87. Retention: Purchase data kept for tax records.</li>
+                <li>88. Disposal: Analytics deleted after 14 months.</li>
+                <li>89. COPPA Compliance: No data collected from under 13s.</li>
+                <li>90. Third-Party Policy: Google Play Services.</li>
+                <li>91. Third-Party Policy: Google AdMob.</li>
+                <li>92. Policy Revision History.</li>
+                <li>93. Notification of significant changes via app update.</li>
+                <li>94. Jurisdiction: Governed by local privacy laws.</li>
+                <li>95. Data Protection Officer (DPO) availability.</li>
+                <li>96. Secure Data Deletion upon app uninstall.</li>
+                <li>97. Privacy-by-Design architecture.</li>
+                <li>98. Transparency in AI-driven level generation.</li>
+                <li>99. Legal Basis: Consent-driven processing.</li>
+                <li>100. Contact: azarrows-privacy@azmeer.com</li>
+            </ul>
+
+            <h2 style="margin-top: 50px; text-align: center; border:none;">AzMeer Developers</h2>
+            <p style="text-align: center;">Crafted with care in Pakistan.</p>
+            <div style="height: 100px;"></div>
+        </div>
+
+    </div>
+</div>
+
+<div class="controls">
+    <button id="prevBtn" disabled>PREVIOUS</button>
+    <button id="nextBtn">NEXT PAGE</button>
+</div>
+
+<div class="page-indicator" id="pageInd">PAGE 1 / 5</div>
+
+<script>
+    const pages = document.querySelectorAll('.page');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageInd = document.getElementById('pageInd');
+    
+    let current = 0;
+
+    function flip() {
+        pages.forEach((p, i) => {
+            if (i < current) {
+                p.classList.add('flipped');
+                p.style.zIndex = i + 1;
+            } else {
+                p.classList.remove('flipped');
+                p.style.zIndex = pages.length - i;
+            }
+        });
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === pages.length - 1;
+        pageInd.innerText = `PAGE ${current + 1} / ${pages.length}`;
+        pages[current].scrollTop = 0;
+    }
+
+    nextBtn.onclick = () => { if(current < pages.length - 1) { current++; flip(); } };
+    prevBtn.onclick = () => { if(current > 0) { current--; flip(); } };
+</script>
+
+</body>
+</html>
